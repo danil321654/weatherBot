@@ -1,0 +1,22 @@
+module.exports = {
+  extraHot:
+    "CAACAgIAAxkBAAEBFoJfGgU_b15AbupsmUBlTfBOLJwZQgADBAAC0lqIAXL6TF9T7CRvGgQ",
+  hot:
+    "CAACAgIAAxkBAAEBFlpfGbrcsOcykB4O6527amlXROIEKwACAgQAAtJaiAECKCdNruu1MRoE",
+  sunny:
+    "CAACAgIAAxkBAAEBFlhfGbrXbgYRD8t-3mqktqiAfEGJ1gAC_gMAAtJaiAFRjFvNBsO5yBoE",
+  cloudy:
+    "CAACAgIAAxkBAAEBFn5fGgUy-DNWtqn4cJBeGg5iUTFrnQACJAQAAtJaiAGGA7TDrrPgrxoE",
+  windy:
+    "CAACAgIAAxkBAAEBFoBfGgU3I291fx1-ky4_WavySdGI_QACIgQAAtJaiAFjc2CbQBVg3BoE",
+  rainy:
+    "CAACAgIAAxkBAAEBFnxfGgUtqdklsdgDKWS1F9J9T9UI1gACSwQAAtJaiAFXp6lBpcqOExoE",
+  storm:
+    "CAACAgIAAxkBAAEBFoZfGgVTlyh5BQis57UFg-K1JwZJkQAC_AMAAtJaiAFrmsXOMaIHIRoE",
+  nearZero:
+    "CAACAgIAAxkBAAEBFwFfGtdB9i91v14syQzc-DyxZKVb-wAC9gMAAtJaiAEUWUPrJtRWlRoE",
+  cold:
+    "CAACAgIAAxkBAAEBFopfGgXsNkra_Gs2hAXYOKIy_QQrtAACRwQAAtJaiAE_LcKbC-PZChoE",
+  snow:
+    "CAACAgIAAxkBAAEBFohfGgWLzTKCKxMIfdVAR51gOC6SKQACIAQAAtJaiAGW2fOTA3PlcRoE"
+};
