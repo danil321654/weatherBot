@@ -9,6 +9,8 @@ module.exports = weatherData => {
     stickers.push(weather.rainy);
   } else if (weatherData.weather[0].main === "Snow") {
     stickers.push(weather.snow);
+  } else if (weatherData.weather[0].main === "Clear") {
+    stickers.push(weather.clearSky);
   } else if (weatherData.weather[0].main === "Clouds") {
     stickers.push(weather.cloudy);
   } else if (weatherData.main.temp <= 268.15) {
