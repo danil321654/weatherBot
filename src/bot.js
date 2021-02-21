@@ -10,7 +10,7 @@ const KtoC = require("./util/temp");
 const cities = require("./current.city.list.min");
 const weatherSticker = require("./weatherSticker");
 const citiesNamesCountries = cities.map(el => {
-  return {name: el.name, country: el.country};
+  return {id: el.id, name: el.name, country: el.country};
 });
 
 const replyWithWeather = async (ctx, city = undefined) => {
@@ -19,6 +19,7 @@ const replyWithWeather = async (ctx, city = undefined) => {
   if (requestedCity.split(" ").length == 1) {
     requestedCity = {
       city: requestedCity
+        .toLowerCase()
         .split("-")
         .map(
           cityPart =>
@@ -43,6 +44,7 @@ const replyWithWeather = async (ctx, city = undefined) => {
     requestedCity = {
       city: requestedCity
         .split(" ")[0]
+        .toLowerCase()
         .split("-")
         .map(
           cityPart =>
@@ -53,7 +55,7 @@ const replyWithWeather = async (ctx, city = undefined) => {
               .join("")
         )
         .join("-"),
-      country: requestedCity.split(" ")[1]
+      country: requestedCity.split(" ")[1].toUpperCase()
     };
     res = citiesNamesCountries
       .map(el => {
@@ -68,7 +70,7 @@ const replyWithWeather = async (ctx, city = undefined) => {
   } else ctx.reply("Bad request");
   if (res.length == 1) {
     let response = await axios.get(
-      `https://api.openweathermap.org/data/2.5/weather?q=${res[0].name}&appid=${process.env.weatherToken}`
+      `https://api.openweathermap.org/data/2.5/weather?id=${res[0].id}&appid=${process.env.weatherToken}`
     );
     await ctx.reply(
       `Temperature in ${res[0].name} is ${KtoC(
@@ -101,6 +103,9 @@ const replyWithWeather = async (ctx, city = undefined) => {
     });
     bot.action(/^[A-Za-z ]+$/, async ctx =>
       replyWithWeather(ctx, ctx.update.callback_query.data)
+    );
+    bot.action("-1", async ctx =>
+      ctx.reply("Hello, the weather in which city do you want to know?")
     );
   } else ctx.reply("I don't have information about such city");
 };
