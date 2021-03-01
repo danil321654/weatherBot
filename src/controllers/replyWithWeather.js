@@ -12,7 +12,8 @@ const citiesNamesCountries = cities.map(el => {
 module.exports = async (ctx, city = undefined) => {
   let requestedCity = !city ? ctx.update.message.text : city;
   let res;
-  if (requestedCity.split(" ").length == 1) {
+  if (requestedCity.split(" ")[0].length < 3) ctx.reply("Bad request");
+  else if (requestedCity.split(" ").length == 1) {
     requestedCity = {
       city: requestedCity
         .toLowerCase()
